@@ -12,6 +12,8 @@ Group 303 semester project 2016
 
 !!! If you do not follow these steps, Unity WILL NOT WORK with GitHub.
 
+You must close Unity in order to add files to gitHub, otherwise it will not work.
+
 	Keep in mind that the .gitIgnore file means that github will ignore all unity files except for those in PROJECT SETTINGS and in ASSETS. Any changes you make in these folders will affect the project in gitHub. Any other changes (such as customizing your unity UI layout) will NOT affect it, so you can do that freely.
 
 
