@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [Serializable]
-    public class MouseLook 
+	public class MouseLook
     {
         public float XSensitivity = 2f;
         public float YSensitivity = 2f;
@@ -35,6 +35,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
+			Debug.Log (m_CameraTargetRot);
 
             if(clampVerticalRotation)
                 m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);

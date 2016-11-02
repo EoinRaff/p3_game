@@ -131,10 +131,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-			if (!isLocalPlayer) {
-				return;
-			}
-
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
