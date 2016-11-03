@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RayCastShooting : MonoBehaviour {
 
+
+	public string gunColor;
 	public int gunDamage = 1;                                           // Set the number of hitpoints that this gun will take away from shot objects with a health script
 	public float fireRate = 0.25f;                                      // Number in seconds which controls how often the player can fire
 	public float weaponRange = 50f;                                     // Distance in Unity units over which the player can fire
@@ -59,7 +61,7 @@ public class RayCastShooting : MonoBehaviour {
 				if (health != null)
 				{
 					// Call the damage function of that script, passing in our gunDamage variable
-					health.Damage (gunDamage);
+					health.Damage (gunDamage, gunColor);
 				}
 
 				// Check if the object we hit has a rigidbody attached
