@@ -9,7 +9,8 @@ public class EnemyPatrol : MonoBehaviour {
     int destination = 0;
     NavMeshAgent agent;
     public bool chase = false;
-    GameObject player;
+    GameObject player, rPortal, gPortal, bPortal;
+    Color currentColor;
     
     //------------------------
     //This array will be filled with empty game objects in the inspector
@@ -29,42 +30,42 @@ public class EnemyPatrol : MonoBehaviour {
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         agent.autoBraking = false;
-        GoToNextPoint();
+        rPortal = GameObject.Find("rPortal");
+        gPortal = GameObject.Find("gPortal");
+        bPortal = GameObject.Find("bPortal");
+        player = GameObject.FindGameObjectWithTag("Player");
 
 	}
-	void GoToNextPoint()
+
+    void moveToPoint(GameObject target)
     {
-        if (Waypoints.Length==0)
-        {
-            return;
-        }
-        agent.destination = Waypoints[destination].position;
-
-        destination = (destination + 1) % Waypoints.Length;
+        agent.destination = target.transform.position;
     }
-    void ChasePlayer()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        agent.destination = player.transform.position;
 
-        //needs some collision logic
-
-    }
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.C))
+        currentColor = gameObject.GetComponent<Renderer>().material.color;
+        if (currentColor != Color.red && currentColor != Color.green && currentColor != Color.blue)
         {
-            //switch for debugging
-            chase = !chase;
+            moveToPoint(player);
+        }
+        else if (currentColor == Color.red)
+        {
+            moveToPoint(rPortal);
+
+        }
+        else if (currentColor == Color.green)
+        {
+            moveToPoint(gPortal);
+        }
+        else if (currentColor == Color.blue)
+        {
+            moveToPoint(bPortal);
+        }
+        else
+        {
+            Debug.Log("you shouldn't be here..." + gameObject.name);
         }
 
-        if (agent.remainingDistance > 0.5f && !chase)
-        {
-            GoToNextPoint();
-        }
-        if (chase)
-        {
-            ChasePlayer();
-        }
-	}
+    }
 }
