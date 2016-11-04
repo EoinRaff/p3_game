@@ -3,6 +3,8 @@ using System.Collections;
 
 public class RayCastShooting : MonoBehaviour {
 
+
+	public string gunColor;
 	public int gunDamage = 1;                                           // Set the number of hitpoints that this gun will take away from shot objects with a health script
 	public float fireRate = 0.25f;                                      // Number in seconds which controls how often the player can fire
 	public float weaponRange = 50f;                                     // Distance in Unity units over which the player can fire
@@ -65,6 +67,7 @@ public class RayCastShooting : MonoBehaviour {
 			laserLine.SetPosition (0, gunEnd.position);
 
 			// Check if our raycast has hit anything
+<<<<<<< HEAD
 				if (Physics.Raycast (fpsRayOrigin, fpsCam.transform.forward, out hit, weaponRange)) {
 					// Set the end position for our laser line 
 					laserLine.SetPosition (1, hit.point);
@@ -79,6 +82,25 @@ public class RayCastShooting : MonoBehaviour {
 					}
 				} 
 				else 
+=======
+			if (Physics.Raycast (rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
+			{
+				// Set the end position for our laser line 
+				laserLine.SetPosition (1, hit.point);
+
+				// Get a reference to a health script attached to the collider we hit
+				ShootableThing health = hit.collider.GetComponent<ShootableThing>();
+
+				// If there was a health script attached
+				if (health != null)
+				{
+					// Call the damage function of that script, passing in our gunDamage variable
+					health.Damage (gunDamage, gunColor);
+				}
+
+				// Check if the object we hit has a rigidbody attached
+				if (hit.rigidbody != null)
+>>>>>>> master
 				{
 					// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
 					laserLine.SetPosition (1, fpsRayOrigin + (fpsCam.transform.forward * weaponRange));

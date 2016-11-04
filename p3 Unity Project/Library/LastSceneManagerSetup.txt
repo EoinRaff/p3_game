@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/_scenes/Aiming.unity
-  isLoaded: 1
-  isActive: 1
