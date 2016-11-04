@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/obj/Debug/Assembly-CSharp-firstpass.dll
@@ -15,3 +16,22 @@
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/amaliesolander/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+=======
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/UnityEngine.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/UnityEditor.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Mono.Cecil.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.DataContract.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/SuneKlem/Desktop/p3_game/p3 Unity Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+>>>>>>> master
