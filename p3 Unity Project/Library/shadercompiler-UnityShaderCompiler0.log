@@ -1,5 +1,7 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Cmd: getPlatforms
+<<<<<<< HEAD
+=======
 Cmd: preprocess
   insize=999 outsize=1282 ok=1
 Cmd: compileSnippet
@@ -1322,3 +1324,4 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=1031 outsize=0 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP ok=1
 >>>>>>> 159b07127a6d4e7ed9a508a494aa8c90c6c08f5a
+>>>>>>> master
