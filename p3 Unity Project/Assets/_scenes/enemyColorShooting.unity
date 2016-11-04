@@ -502,7 +502,7 @@ Prefab:
     - target: {fileID: 114000010115495954, guid: 9540270d8aefa49569902f961ae4095d,
         type: 2}
       propertyPath: gunColor
-      value: Blue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 1000012567554012, guid: 9540270d8aefa49569902f961ae4095d, type: 2}
       propertyPath: m_TagString
