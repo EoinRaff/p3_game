@@ -4,11 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyPatrol : MonoBehaviour {
 
-    public Transform[] Waypoints;
-    //public int MoveSpeed;
-    int destination = 0;
+
     NavMeshAgent agent;
-    public bool chase = false;
     GameObject player, rPortal, gPortal, bPortal;
     Color currentColor;
     
