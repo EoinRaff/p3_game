@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Blue Enemy
+  - Green Enemy
+  - Blue Gun
+  - Green Gun
   layers:
   - Default
   - TransparentFX
