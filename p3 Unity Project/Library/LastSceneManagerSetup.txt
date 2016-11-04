@@ -1,8 +1,0 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_scenes/enemyColorShooting.unity
-=======
-- path: Assets/_scenes/enemy_spawn.unity
->>>>>>> master
-  isLoaded: 1
-  isActive: 1
