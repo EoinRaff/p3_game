@@ -32,6 +32,7 @@ public class MultiplayerScript : NetworkBehaviour {
 			}
 
 		}
+		registerPlayer ();
 
 	}
 		
@@ -42,6 +43,14 @@ public class MultiplayerScript : NetworkBehaviour {
 			sceneCamera.gameObject.SetActive (true); 
 
 		}
+
+	}
+
+	void registerPlayer () {
+
+		string playerID = "Player " +  GetComponent <NetworkIdentity> ().netId; 
+		transform.name = playerID;
+
 
 	}
 
