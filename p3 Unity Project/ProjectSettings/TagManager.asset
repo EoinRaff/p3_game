@@ -4,7 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Shootable
+  - Blue Enemy
+  - Green Enemy
+  - Blue Gun
+  - Green Gun
+=======
+  - RedGun
+  - New Tag
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
