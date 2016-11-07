@@ -47,12 +47,15 @@ public class ShootableThing : MonoBehaviour
         if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Green")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
-            print("Cyan hit by Green");
+            //print("Cyan hit by Green");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
         }
         else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Blue")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.green;
-            print("Cyan hit by Blue");
+            //print("Cyan hit by Blue");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+
         }
 
 
@@ -61,12 +64,16 @@ public class ShootableThing : MonoBehaviour
         if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Blue")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.red;
-            print("Magenta hit by Blue");
+            //print("Magenta hit by Blue");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+
         }
         else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Red")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.blue;
-            print("Magenta hit by Red");
+            //print("Magenta hit by Red");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+
         }
 
 
@@ -76,12 +83,16 @@ public class ShootableThing : MonoBehaviour
         if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Red")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.green;
-            print("Yellow hit by Red");
+            //print("Yellow hit by Red");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+
         }
         else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Green")
         {
             gameObject.GetComponent<Renderer>().material.color = Color.red;
-            print("Yellow hit by Green");
+            //print("Yellow hit by Green");
+            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+
         }
 
 
