@@ -25,8 +25,8 @@ public class SpawnEnemies : MonoBehaviour {
 	}
 
 	void SpawnRandomEnemies() {
-		int selectItem = Random.Range (0, 3);
-		Debug.Log ("The enemy no is: " + selectItem);
+		int selectItem = Random.Range (0, 6);
+		//Debug.Log ("The enemy no is: " + selectItem);
 		GameObject myObj = Instantiate (gameObjectsSet [selectItem]) as GameObject;
 
 		myObj.transform.position = transform.position;

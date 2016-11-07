@@ -100,24 +100,28 @@ public class ShootableThing : MonoBehaviour
         //RGB ENEMIES
 
         //if the red enemy is shot by a red gun it should dissapear/die
-        if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Red && gunColor == "Red")
+        if (currentHealth <= 0 &&
+            (gameObject.GetComponent<Renderer>().material.color == Red && gunColor == "Red") ||
+            (gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue") ||
+            (gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green"))
         {
-            gameObject.SetActive(false);
-            print("Red hit");
+            //gameObject.SetActive(false);
+            //print("Red hit");
+            Destroy(gameObject);
         }
 
         //if the blue enemy is shot by a blue gun it should dissapear/die
         if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue")
         {
-            gameObject.SetActive(false);
-            print("Blue hit");
+            //gameObject.SetActive(false);
+            //print("Blue hit");
         }
 
         //if the green enemy is shot by a green gun it should dissapear/die
         if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green")
         {
-            gameObject.SetActive(false);
-            print("Green hit");
+            //gameObject.SetActive(false);
+            //print("Green hit");
         }
     }
 }
