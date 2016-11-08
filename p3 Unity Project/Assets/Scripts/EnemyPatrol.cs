@@ -8,12 +8,7 @@ public class EnemyPatrol : MonoBehaviour {
     NavMeshAgent agent;
     GameObject player, rPortal, gPortal, bPortal;
     Color currentColor;
-    
-    //------------------------
-    //This array will be filled with empty game objects in the inspector
-    //The object that has this code attached to it will move between these points 
-    //in the order they appear in the array
-    //------------------------
+   
 
         /// <summary>
         /// The completed scene also needs a NavMesh. This is made by going to window > navigation. 
@@ -64,5 +59,21 @@ public class EnemyPatrol : MonoBehaviour {
             Debug.Log("you shouldn't be here..." + gameObject.name);
         }
 
+    }
+
+    void onTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Collider>().tag == "Player")
+        {
+            if (currentColor == Color.cyan || currentColor == Color.magenta || currentColor == Color.yellow )
+            {
+                Destroy(gameObject);
+                //this probably needs to be called in the player class in order to affect it's health...
+            }
+        }
+        if (other.GetComponent<Collider>().tag == "Portal")
+        {
+            Destroy(gameObject);
+        }
     }
 }
