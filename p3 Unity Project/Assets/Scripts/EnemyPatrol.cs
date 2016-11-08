@@ -39,7 +39,7 @@ public class EnemyPatrol : MonoBehaviour {
         currentColor = gameObject.GetComponent<Renderer>().material.color;
         if (currentColor != Color.red && currentColor != Color.green && currentColor != Color.blue)
         {
-            moveToPoint(player);
+            moveToPoint(findClosestPlayer());
         }
         else if (currentColor == Color.red)
         {
@@ -75,5 +75,25 @@ public class EnemyPatrol : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    GameObject findClosestPlayer()
+    {
+        GameObject[] players;
+        players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject player in players)
+        {
+            Vector3 difference = player.transform.position - position;
+            float currentDistance = difference.sqrMagnitude;
+            if (currentDistance < distance)
+            {
+                closest = player;
+                distance = currentDistance;
+            }
+        }
+        return closest;
     }
 }
