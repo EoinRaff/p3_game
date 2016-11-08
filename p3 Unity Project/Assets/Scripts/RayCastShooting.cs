@@ -12,6 +12,7 @@ public class RayCastShooting : MonoBehaviour
     public float weaponRange = 50f;                                     // Distance in Unity units over which the player can fire
     public float hitForce = 100f;                                       // Amount of force which will be added to objects with a rigidbody shot by the player
     public Transform gunEnd;                                            // Holds a reference to the gun end object, marking the muzzle location of the gun
+    public ParticleSystem partical;
 
     private Camera fpsCam;                                              // Holds a reference to the first person camera
     private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);    // WaitForSeconds object used by our ShotEffect coroutine, determines time laser line will remain visible
@@ -91,17 +92,23 @@ public class RayCastShooting : MonoBehaviour
         {
             gunMat.color = Color.red;
             gunColor = "Red";
+            laserLine.material = new Material(Shader.Find("Particles/Additive"));
+            laserLine.SetColors(Color.red, Color.white);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             gunMat.color = Color.green;
             gunColor = "Green";
+            laserLine.material = new Material(Shader.Find("Particles/Additive"));
+            laserLine.SetColors(Color.green, Color.white);
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             gunMat.color = Color.blue;
             gunColor = "Blue";
+            laserLine.material = new Material(Shader.Find("Particles/Additive"));
+            laserLine.SetColors(Color.blue, Color.white);
         }
 
     }
@@ -109,6 +116,7 @@ public class RayCastShooting : MonoBehaviour
     {
         // Turn on our line renderer
         laserLine.enabled = true;
+        partical.Play();
 
         //Wait for .07 seconds
         yield return shotDuration;
