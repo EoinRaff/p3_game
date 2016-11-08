@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Portal
-  - New Tag
+  - Enemy
   layers:
   - Default
   - TransparentFX

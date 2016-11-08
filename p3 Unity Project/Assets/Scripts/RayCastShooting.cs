@@ -91,20 +91,17 @@ public class RayCastShooting : MonoBehaviour
         {
             gunMat.color = Color.red;
             gunColor = "Red";
-            print(gunColor);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             gunMat.color = Color.green;
             gunColor = "Green";
-            print(gunColor);
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             gunMat.color = Color.blue;
             gunColor = "Blue";
-            print(gunColor);
         }
 
     }
