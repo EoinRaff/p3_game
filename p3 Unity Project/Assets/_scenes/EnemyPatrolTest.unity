@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18053655, g: 0.22601871, b: 0.30718789, a: 1}
+  m_IndirectSpecularColor: {r: 0.12758623, g: 0.13438202, b: 0.12116974, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -260,7 +260,9 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1403714606}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 199000010963647538, guid: c7a473f37d59f4183aaad616f7f8c3e3, type: 2}
+    - {fileID: 198000011553718688, guid: c7a473f37d59f4183aaad616f7f8c3e3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c7a473f37d59f4183aaad616f7f8c3e3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &384127551
@@ -368,7 +370,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 108000010914623896, guid: 99b46db296b5f964a84881c6cd9aaeb6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 99b46db296b5f964a84881c6cd9aaeb6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &573773761
@@ -609,6 +612,45 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &938869682 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012748495906, guid: 430ba4c57e425f843bfedbedfa85f59c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1667359549}
+--- !u!108 &938869689
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938869682}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1018127150
 Prefab:
   m_ObjectHideFlags: 0
@@ -659,6 +701,45 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f114e6b62ad5134b9ba4e0a01ddc050, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1042636215 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014003530294, guid: 532b15e107467b44a8e86853715b4387,
+    type: 2}
+  m_PrefabInternal: {fileID: 1832425974}
+--- !u!108 &1042636222
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042636215}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1074798325
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1074798326
 Light:
   m_ObjectHideFlags: 0
@@ -788,6 +869,45 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7f114e6b62ad5134b9ba4e0a01ddc050, type: 2}
   m_PrefabInternal: {fileID: 1018127150}
+--- !u!1 &1338159358 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011390807638, guid: 99b46db296b5f964a84881c6cd9aaeb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 452545272}
+--- !u!108 &1338159361
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1338159358}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1403714606
 GameObject:
   m_ObjectHideFlags: 0
