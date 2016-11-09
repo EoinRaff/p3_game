@@ -47,18 +47,17 @@ public class RayCastShooting : MonoBehaviour {
 		}
 
 		// Check if the player has pressed the fire button and if enough time has elapsed since they last fired
-		if (Input.GetButtonDown("Fire1") && Time.time > nextFire) 
-		{
+		if (Input.GetButtonDown ("Fire1") && Time.time > nextFire) {
 			// Update the time when our player can fire next
 			nextFire = Time.time + fireRate;
 
 			// Start our ShotEffect coroutine to turn our laser line on and off
-			StartCoroutine (ShotEffect());
+			StartCoroutine (ShotEffect ());
 
 			// Create a vector at the center of our camera's viewport
-			Vector3 fpsRayOrigin = fpsCam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+			Vector3 fpsRayOrigin = fpsCam.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, 0.0f));
 
-			Vector3 sightRayOrigin = sightCam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f, 0.0f));
+			Vector3 sightRayOrigin = sightCam.ViewportToWorldPoint (new Vector3 (0.5f, 0.5f, 0.0f));
 
 			// Declare a raycast hit to store information about what our raycast has hit
 			RaycastHit hit;
@@ -67,45 +66,25 @@ public class RayCastShooting : MonoBehaviour {
 			laserLine.SetPosition (0, gunEnd.position);
 
 			// Check if our raycast has hit anything
-<<<<<<< HEAD
-				if (Physics.Raycast (fpsRayOrigin, fpsCam.transform.forward, out hit, weaponRange)) {
-					// Set the end position for our laser line 
-					laserLine.SetPosition (1, hit.point);
-
-					// Get a reference to a health script attached to the collider we hit
-					ShootableThing health = hit.collider.GetComponent<ShootableThing> ();
-
-					// If there was a health script attached
-					if (health != null) {
-						// Call the damage function of that script, passing in our gunDamage variable
-						health.Damage (gunDamage);
-					}
-				} 
-				else 
-=======
-			if (Physics.Raycast (rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
-			{
+//<<<<<<< HEAD
+			if (Physics.Raycast (fpsRayOrigin, fpsCam.transform.forward, out hit, weaponRange)) {
 				// Set the end position for our laser line 
 				laserLine.SetPosition (1, hit.point);
 
 				// Get a reference to a health script attached to the collider we hit
-				ShootableThing health = hit.collider.GetComponent<ShootableThing>();
+				ShootableThing health = hit.collider.GetComponent<ShootableThing> ();
 
 				// If there was a health script attached
-				if (health != null)
-				{
+				if (health != null) {
 					// Call the damage function of that script, passing in our gunDamage variable
 					health.Damage (gunDamage, gunColor);
 				}
+			} else {
+				laserLine.SetPosition (1, fpsRayOrigin + (fpsCam.transform.forward * weaponRange));
 
-				// Check if the object we hit has a rigidbody attached
-				if (hit.rigidbody != null)
->>>>>>> master
-				{
-					// If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
-					laserLine.SetPosition (1, fpsRayOrigin + (fpsCam.transform.forward * weaponRange));
-				}
+			}
 		}
+
 	}
 
 
