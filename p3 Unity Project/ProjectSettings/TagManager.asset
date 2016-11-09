@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Portal
+  - Enemy
+  - New Tag
+>>>>>>> 922158364e3926ce1ff5b898a37f85faaf4b15fa
   layers:
   - Default
   - TransparentFX
