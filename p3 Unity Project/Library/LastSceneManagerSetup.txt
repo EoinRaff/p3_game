@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_scenes/enemy_spawn (Prototype).unity
+  isLoaded: 1
+  isActive: 1

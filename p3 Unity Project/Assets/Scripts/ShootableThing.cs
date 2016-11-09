@@ -42,7 +42,6 @@ public class ShootableThing : MonoBehaviour {
 		//subtract damage amount when Damage function is called
 		currentHealth -= damageAmount;
 
-
 		//CYAN ENEMY
 		//if the cyan enemy is shot by a green gun it should turn blue, else if it is shot by a blue gun it should turn green
 		if (currentHealth == 1 && gameObject.GetComponent <Renderer> ().material.color == Cyan && gunColor=="Green") {  
@@ -53,6 +52,7 @@ public class ShootableThing : MonoBehaviour {
 			gameObject.GetComponent <Renderer> ().material.color = Color.green;
 			print ("Cyan hit by Blue");
 		}
+
 
 
 		//MAGENTA ENEMY	
