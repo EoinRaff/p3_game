@@ -35,7 +35,7 @@ public class ShootableThing : MonoBehaviour
 			currentHealth = 1;
 	*/
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	public void Damage(int damageAmount, string gunColor)
 	{
 
@@ -101,96 +101,96 @@ public class ShootableThing : MonoBehaviour
 			print ("Green hit");
 		}
 	}
-=======
-    public void Damage(int damageAmount, string gunColor)
-    {
-
-        //subtract damage amount when Damage function is called
-        currentHealth -= damageAmount;
-
-
-        //CYAN ENEMY
-        //if the cyan enemy is shot by a green gun it should turn blue, else if it is shot by a blue gun it should turn green
-        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Green")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
-            //print("Cyan hit by Green");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-        }
-        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Blue")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
-            //print("Cyan hit by Blue");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-
-        }
-
-
-        //MAGENTA ENEMY	
-        //if the magenta enemy is shot by a blue gun it should turn red, else if it is shot by a red gun it should turn blue
-        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Blue")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.red;
-            //print("Magenta hit by Blue");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-
-        }
-        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Red")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
-            //print("Magenta hit by Red");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-
-        }
-
-
-
-        //YELLOW ENEMY
-        //if the yellow enemy is shot by a red gun it should turn green, else if it is shot by a green gun it should turn red
-        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Red")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
-            //print("Yellow hit by Red");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-
-        }
-        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Green")
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.red;
-            //print("Yellow hit by Green");
-            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
-
-        }
-
-
-
-        //RGB ENEMIES
-
-        //if the red enemy is shot by a red gun it should dissapear/die
-        if (currentHealth <= 0 &&
-            (gameObject.GetComponent<Renderer>().material.color == Red && gunColor == "Red") ||
-            (gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue") ||
-            (gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green"))
-        {
-            //gameObject.SetActive(false);
-            //print("Red hit");
-            Destroy(gameObject);
-        }
-
-        //if the blue enemy is shot by a blue gun it should dissapear/die
-        if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue")
-        {
-            //gameObject.SetActive(false);
-            //print("Blue hit");
-        }
-
-        //if the green enemy is shot by a green gun it should dissapear/die
-        if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green")
-        {
-            //gameObject.SetActive(false);
-            //print("Green hit");
-        }
-    }
->>>>>>> 922158364e3926ce1ff5b898a37f85faaf4b15fa
+//=======
+//    public void Damage(int damageAmount, string gunColor)
+//    {
+//
+//        //subtract damage amount when Damage function is called
+//        currentHealth -= damageAmount;
+//
+//
+//        //CYAN ENEMY
+//        //if the cyan enemy is shot by a green gun it should turn blue, else if it is shot by a blue gun it should turn green
+//        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Green")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+//            //print("Cyan hit by Green");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//        }
+//        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Cyan && gunColor == "Blue")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.green;
+//            //print("Cyan hit by Blue");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//
+//        }
+//
+//
+//        //MAGENTA ENEMY	
+//        //if the magenta enemy is shot by a blue gun it should turn red, else if it is shot by a red gun it should turn blue
+//        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Blue")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.red;
+//            //print("Magenta hit by Blue");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//
+//        }
+//        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Magenta && gunColor == "Red")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+//            //print("Magenta hit by Red");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//
+//        }
+//
+//
+//
+//        //YELLOW ENEMY
+//        //if the yellow enemy is shot by a red gun it should turn green, else if it is shot by a green gun it should turn red
+//        if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Red")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.green;
+//            //print("Yellow hit by Red");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//
+//        }
+//        else if (currentHealth == 1 && gameObject.GetComponent<Renderer>().material.color == Yellow && gunColor == "Green")
+//        {
+//            gameObject.GetComponent<Renderer>().material.color = Color.red;
+//            //print("Yellow hit by Green");
+//            gameObject.transform.localScale -= new Vector3(1f, 1f, 1f);
+//
+//        }
+//
+//
+//
+//        //RGB ENEMIES
+//
+//        //if the red enemy is shot by a red gun it should dissapear/die
+//        if (currentHealth <= 0 &&
+//            (gameObject.GetComponent<Renderer>().material.color == Red && gunColor == "Red") ||
+//            (gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue") ||
+//            (gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green"))
+//        {
+//            //gameObject.SetActive(false);
+//            //print("Red hit");
+//            Destroy(gameObject);
+//        }
+//
+//        //if the blue enemy is shot by a blue gun it should dissapear/die
+//        if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Blue && gunColor == "Blue")
+//        {
+//            //gameObject.SetActive(false);
+//            //print("Blue hit");
+//        }
+//
+//        //if the green enemy is shot by a green gun it should dissapear/die
+//        if (currentHealth <= 0 && gameObject.GetComponent<Renderer>().material.color == Green && gunColor == "Green")
+//        {
+//            //gameObject.SetActive(false);
+//            //print("Green hit");
+//        }
+//    }
+//>>>>>>> 922158364e3926ce1ff5b898a37f85faaf4b15fa
 }
 
