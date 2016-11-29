@@ -4,8 +4,8 @@ import numpy as np
 
 # import Haar Cascades
 # need to change the path to where they are stored on your computer
-face_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\Python\haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\Python\haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_game\Python Heart Rate Monitor\haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_game\Python Heart Rate Monitor\haarcascade_eye.xml')
 
 
 
@@ -52,15 +52,20 @@ while True:
             forehead_y = y
             
         cv2.rectangle(img, (forehead_x, forehead_y), (forehead_MaxX, forehead_MaxY), (0,0,255),2)
-
-        # create ROI from these coordinates
+            
+        # create ROI from these coordinates. Maybe unnecessary.
         roi_forehead = img[forehead_y:forehead_MaxY, forehead_x:forehead_MaxX]
-        
-        # calculate the average colour
-        
-        ###this just calculates average position within the ROI
-        #avgColor = np.average(roi_forehead)        
-        #print avgColor
+
+
+        avgGreen = 0
+
+        #calculate the average green in the ROI
+        for i in range (forehead_x,forehead_MaxX):
+            for j in range(forehead_y, forehead_MaxY):
+                avgGreen = np.average(img[i, j, 1])
+        print "Average Green: {0}".format(avgGreen)
+
+
 
 
     # display the video feed
