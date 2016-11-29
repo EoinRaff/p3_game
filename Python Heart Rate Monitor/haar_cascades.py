@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+from __future__ import division
 import cv2
 import numpy as np
 
@@ -7,7 +9,7 @@ import numpy as np
 face_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_game\Python Heart Rate Monitor\haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_game\Python Heart Rate Monitor\haarcascade_eye.xml')
 
-
+pulseModifier = 180
 
 # initialize camera
 cap = cv2.VideoCapture(0)
@@ -56,14 +58,31 @@ while True:
         # create ROI from these coordinates. Maybe unnecessary.
         roi_forehead = img[forehead_y:forehead_MaxY, forehead_x:forehead_MaxX]
 
+        #Normalize colours
+        for y in range (forehead_x,forehead_MaxX):
+            for x in range(forehead_y, forehead_MaxY):
+                temp = img[x, y, 0] + img[x, y, 1] + img[x, y, 2] + 0.00001
+                img[x, y, 0] = (img[x, y, 0]/temp)#*255
+                img[x, y, 1] = (img[x, y, 1]/temp)#*255
+                img[x, y, 2] = (img[x, y, 2]/temp)#*255
+                
+                
 
+                
+
+        area = 0
+        totalGreen = 0
         avgGreen = 0
 
         #calculate the average green in the ROI
-        for i in range (forehead_x,forehead_MaxX):
-            for j in range(forehead_y, forehead_MaxY):
-                avgGreen = np.average(img[i, j, 1])
-        print "Average Green: {0}".format(avgGreen)
+        for y in range (forehead_x,forehead_MaxX):
+            for x in range(forehead_y, forehead_MaxY):
+                area += 1
+                totalGreen += img[x, y, 1]
+                #avgGreen = np.average(img[x, y, 1])
+        avgGreen = totalGreen/area
+        #print "Average Green: {0}".format(avgGreen)
+        print "Pulse: {0}bpm".format(avgGreen * pulseModifier)
 
 
 
