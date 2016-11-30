@@ -58,34 +58,44 @@ while True:
         # create ROI from these coordinates. Maybe unnecessary.
         roi_forehead = img[forehead_y:forehead_MaxY, forehead_x:forehead_MaxX]
 
-        #Normalize colours
-        for y in range (forehead_x,forehead_MaxX):
-            for x in range(forehead_y, forehead_MaxY):
-                temp = img[x, y, 0] + img[x, y, 1] + img[x, y, 2] + 0.00001
-                img[x, y, 0] = (img[x, y, 0]/temp)#*255
-                img[x, y, 1] = (img[x, y, 1]/temp)#*255
-                img[x, y, 2] = (img[x, y, 2]/temp)#*255
-                
-                
-
-                
-
+        b = 0.0
+        g = 0.0
+        r = 0.0
+        temp = int(0)
         area = 0
         totalGreen = 0
         avgGreen = 0
-
-        #calculate the average green in the ROI
+        #Normalize colours
         for y in range (forehead_x,forehead_MaxX):
             for x in range(forehead_y, forehead_MaxY):
+                temp = int(img[x, y, 0]) + int(img[x, y, 1]) + int(img[x, y, 2])
+                
+                if temp != 0:
+                    b = (img[x, y, 0]/temp)
+                    g = (img[x, y, 1]/temp)
+                    r = (img[x, y, 2]/temp)
                 area += 1
-                totalGreen += img[x, y, 1]
+                img[x, y, 0] = 0
+                img[x, y, 1] = g * 255
+                img[x, y, 2] = 0
+                if r + g + b == 1:
+                    totalGreen += g
+                #print temp
+                #print r+g+b
+                #print g
+                
+
+        #calculate the average green in the ROI
+        #for y in range (forehead_x,forehead_MaxX):
+         #   for x in range(forehead_y, forehead_MaxY):
+          #      area += 1
+           #     totalGreen += img[x, y, 1]
                 #avgGreen = np.average(img[x, y, 1])
-        avgGreen = totalGreen/area
-        #print "Average Green: {0}".format(avgGreen)
-        print "Pulse: {0}bpm".format(avgGreen * pulseModifier)
-
-
-
+                
+        if area > 0:
+            avgGreen = totalGreen/area
+        pulse = avgGreen * pulseModifier
+        print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm.".format(area, totalGreen, avgGreen, pulse)
 
     # display the video feed
     cv2.imshow('img', img)
