@@ -3,6 +3,7 @@
 from __future__ import division
 import cv2
 import numpy as np
+from matplotlib import pyplot as plt
 
 # import Haar Cascades
 # need to change the path to where they are stored on your computer
@@ -13,9 +14,11 @@ pulseModifier = 180
 
 # initialize camera
 cap = cv2.VideoCapture(0)
-
+time = 0.0;
 
 while True:
+    
+    time += 1
 
     # global variables for forhead rectange
     forehead_x = 1000000
@@ -80,23 +83,18 @@ while True:
                 img[x, y, 2] = 0
                 if r + g + b == 1:
                     totalGreen += g
-                #print temp
-                #print r+g+b
-                #print g
-                
-
-        #calculate the average green in the ROI
-        #for y in range (forehead_x,forehead_MaxX):
-         #   for x in range(forehead_y, forehead_MaxY):
-          #      area += 1
-           #     totalGreen += img[x, y, 1]
-                #avgGreen = np.average(img[x, y, 1])
-                
+                    
+        #End of forehead double for loop
+        
         if area > 0:
             avgGreen = totalGreen/area
         pulse = avgGreen * pulseModifier
-        print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm.".format(area, totalGreen, avgGreen, pulse)
-
+        #print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm.".format(area, totalGreen, avgGreen, pulse)
+        plt.plot(pulse, time)
+        plt.show
+        
+        #End of faces for loop
+        
     # display the video feed
     cv2.imshow('img', img)
 

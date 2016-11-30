@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/_scenes/enemy_spawn (Prototype).unity
-=======
 - path: Assets/_scenes/EnemyPatrolTest.unity
->>>>>>> 922158364e3926ce1ff5b898a37f85faaf4b15fa
   isLoaded: 1
   isActive: 1
