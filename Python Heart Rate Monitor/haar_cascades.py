@@ -11,6 +11,8 @@ face_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_gam
 eye_cascade = cv2.CascadeClassifier('C:\Users\eoinr_000\Documents\GitHub\p3_game\Python Heart Rate Monitor\haarcascade_eye.xml')
 
 pulseModifier = 180
+minGreen = 1
+maxGreen = 0
 
 # initialize camera
 cap = cv2.VideoCapture(0)
@@ -67,6 +69,7 @@ while True:
         temp = int(0)
         area = 0
         totalGreen = 0
+
         avgGreen = 0
         #Normalize colours
         for y in range (forehead_x,forehead_MaxX):
@@ -88,10 +91,14 @@ while True:
         
         if area > 0:
             avgGreen = totalGreen/area
+            if avgGreen < minGreen:
+                minGreen = avgGreen
+            if avgGreen > maxGreen:
+                maxGreen = avgGreen
         pulse = avgGreen * pulseModifier
-        #print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm.".format(area, totalGreen, avgGreen, pulse)
-        plt.plot(pulse, time)
-        plt.show
+        print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm. Min: {4} Max: {5}".format(area, totalGreen, avgGreen, pulse, minGreen, maxGreen)
+        #plt.plot(pulse, time)
+        #plt.show
         
         #End of faces for loop
         
