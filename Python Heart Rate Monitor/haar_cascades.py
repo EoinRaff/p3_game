@@ -3,6 +3,7 @@
 from __future__ import division
 import cv2
 import numpy as np
+import time
 from matplotlib import pyplot as plt
 
 # import Haar Cascades
@@ -16,11 +17,15 @@ maxGreen = 0
 
 # initialize camera
 cap = cv2.VideoCapture(0)
-time = 0.0;
+start = time.time()
+print start
+time.clock()
+elapsed = 0
+
 
 while True:
-    
-    time += 1
+    elapsed = time.time() - start
+    print elapsed
 
     # global variables for forhead rectange
     forehead_x = 1000000
@@ -97,7 +102,6 @@ while True:
                 maxGreen = avgGreen
         pulse = avgGreen * pulseModifier
         print "Area: {0} TotalGreen: {1} Average Green {2} Pulse: {3}bpm. Min: {4} Max: {5}".format(area, totalGreen, avgGreen, pulse, minGreen, maxGreen)
-        #plt.plot(pulse, time)
         #plt.show
         
         #End of faces for loop
